@@ -78,7 +78,7 @@ fun WelcomeScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "👨‍🍳",
+                    text = "\uD83E\uDDD1\u200D\uD83C\uDF73",
                     fontSize = 32.sp
                 )
             }
@@ -125,7 +125,7 @@ fun WelcomeScreen(
 
             BenefitItem(
                 icon = "♟",
-                text = "Comunidade de chefs"
+                text = "Comunidade de Chefs Amadores"
             )
 
             Spacer(
