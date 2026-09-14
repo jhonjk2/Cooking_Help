@@ -1,6 +1,7 @@
 package com.example.cookinghelp.ui.screen.welcome
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -43,7 +44,10 @@ fun WelcomeScreen(
         Box(
             modifier = Modifier
                 .align(Alignment.TopEnd)
-                .padding(top = 20.dp, end = 20.dp)
+                .padding(
+                    top = 20.dp,
+                    end = 20.dp
+                )
                 .height(100.dp)
                 .fillMaxWidth(0.45f)
                 .alpha(0.08f)
@@ -65,7 +69,8 @@ fun WelcomeScreen(
                 ),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
-        ){
+        ) {
+
             // Ícone do Cooking Help
             Box(
                 modifier = Modifier
@@ -137,7 +142,6 @@ fun WelcomeScreen(
                 text = "Receitas avaliadas"
             )
 
-
             Spacer(
                 modifier = Modifier.height(28.dp)
             )
@@ -164,11 +168,20 @@ fun WelcomeScreen(
                 modifier = Modifier.height(16.dp)
             )
 
-            // Texto para usuários que já possuem conta
+            // Área para usuários que já possuem conta
             Row(
+                modifier = Modifier
+                    .clickable {
+                        onLoginClick()
+                    }
+                    .padding(
+                        horizontal = 12.dp,
+                        vertical = 8.dp
+                    ),
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
+
                 Text(
                     text = "Já tenho uma conta",
                     color = Color.White,
@@ -197,6 +210,7 @@ private fun BenefitItem(
     icon: String,
     text: String
 ) {
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -236,4 +250,3 @@ private fun BenefitItem(
         )
     }
 }
-
